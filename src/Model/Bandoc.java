@@ -21,11 +21,11 @@ public class Bandoc implements Serializable{
     private static int sma=10000;
 
     public Bandoc() {
-        ma=sma++;
+       
     }
 
-    public Bandoc(int ma, String ten, String diachi, String sdt) {
-        this.ma = ma;
+    public Bandoc( String ten, String diachi, String sdt) {
+        this.ma = sma++;
         this.ten = ten;
         this.diachi = diachi;
         this.sdt = sdt;
@@ -71,13 +71,8 @@ public class Bandoc implements Serializable{
         Bandoc.sma = sma;
     }
     
-    
-    
-
-    
-
-    public Object[][] toObject(){
-        return (Object[][]) new Object[]{
+    public Object[] toObject(){
+        return new Object[]{
                 ma,ten,diachi,sdt
         };
    }
